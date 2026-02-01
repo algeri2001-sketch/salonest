@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANYWAY ESTHETIQUE | Réservez votre soin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kfc-red: #E4002B; /* Le rouge iconique */
+            --kfc-black: #202124;
+            --kfc-gray: #F4F4F4;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: white;
+            color: var(--kfc-black);
+        }
+        h1, h2, h3, .font-oswald {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        .bg-kfc-red { background-color: var(--kfc-red); }
+        .text-kfc-red { color: var(--kfc-red); }
+        
+        /* Bouton style KFC */
+        .btn-kfc {
+            background-color: var(--kfc-red);
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        .btn-kfc:hover {
+            transform: scale(1.05);
+            background-color: #c40025;
+        }
+
+        /* Barre de navigation haute type KFC */
+        .kfc-shadow {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Card menu type KFC */
+        .menu-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        .menu-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- HEADER STYLE KFC -->
+    <header class="sticky top-0 z-50 bg-white kfc-shadow">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <!-- Logo -->
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-3xl font-black text-kfc-red leading-none font-oswald italic">ANYWAY</span>
+                    <span class="text-xs font-bold tracking-widest text-black">ESTHÉTIQUE</span>
+                </div>
+                <div class="h-10 w-[2px] bg-gray-200 hidden md:block"></div>
+                <div class="hidden md:flex items-center gap-2 text-sm font-bold ml-4">
+                    <span class="bg-kfc-red text-white p-1 rounded">📍</span>
+                    <span>TROUVER MON INSTITUT</span>
+                </div>
+            </div>
+
+            <!-- Action -->
+            <div class="flex items-center gap-6">
+                <nav class="hidden lg:flex gap-8 font-bold text-sm">
+                    <a href="#menu" class="hover:text-kfc-red">NOS SOINS</a>
+                    <a href="#offres" class="hover:text-kfc-red">OFFRES</a>
+                    <a href="#" class="hover:text-kfc-red">L'INSTITUT</a>
+                </nav>
+                <a href="#reservation" class="btn-kfc text-sm uppercase tracking-wider">
+                    Réserver en ligne
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNIÈRE PROMO (Inspirée KFC) -->
+    <section class="bg-kfc-red text-white py-2 overflow-hidden relative">
+        <div class="flex whitespace-nowrap animate-pulse justify-center font-oswald text-sm tracking-tighter">
+            PROMO DU MOMENT : -20% SUR TOUS LES SOINS VISAGE — RÉSERVEZ AVANT DIMANCHE ! — PROMO DU MOMENT : -20% SUR TOUS LES SOINS VISAGE
+        </div>
+    </section>
+
+    <!-- HERO SECTION (Visuel Direct & Brut) -->
+    <section class="relative bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="flex-1 p-8 md:p-16">
+                <h1 class="text-6xl md:text-8xl font-black mb-6 leading-[0.9]">
+                    LE SOIN <br><span class="text-kfc-red">QUI CLIQUE.</span>
+                </h1>
+                <p class="text-xl font-bold mb-8 text-gray-600">Rapide. Efficace. Sans compromis sur la qualité.</p>
+                <div class="flex gap-4">
+                    <a href="#menu" class="btn-kfc text-xl px-12 py-5">VOIR LE MENU DES SOINS</a>
+                </div>
+            </div>
+            <div class="flex-1 w-full h-[400px] md:h-[600px] relative">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200" alt="Soin Visage" class="w-full h-full object-cover">
+                <div class="absolute bottom-10 left-10 bg-white p-4 shadow-xl rounded-lg">
+                    <p class="text-xs font-black uppercase">Soin Signature</p>
+                    <p class="text-2xl font-black text-kfc-red">DÈS 45€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU CATÉGORIES (Le "Bucket" de soins) -->
+    <section id="menu" class="max-w-7xl mx-auto py-16 px-4">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-4xl font-black">NOS CATÉGORIES</h2>
+            <div class="h-1 flex-1 bg-gray-100 mx-8"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="#" class="group">
+                <div class="bg-white p-6 rounded-xl border-2 border-transparent group-hover:border-kfc-red transition-all text-center">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=300" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 group-hover:scale-110 transition-transform">
+                    <span class="font-oswald text-xl">VISAGE</span>
+                </div>
+            </a>
+            <a href="#" class="group">
+                <div class="bg-white p-6 rounded-xl border-2 border-transparent group-hover:border-kfc-red transition-all text-center">
+                    <img src="https://images.unsplash.com/photo-1544161515-450ce418696b?auto=format&fit=crop&w=300" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 group-hover:scale-110 transition-transform">
+                    <span class="font-oswald text-xl">MASSAGES</span>
+                </div>
+            </a>
+            <a href="#" class="group">
+                <div class="bg-white p-6 rounded-xl border-2 border-transparent group-hover:border-kfc-red transition-all text-center">
+                    <img src="https://images.unsplash.com/photo-1610991148667-09f9845d4791?auto=format&fit=crop&w=300" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 group-hover:scale-110 transition-transform">
+                    <span class="font-oswald text-xl">ONGLES</span>
+                </div>
+            </a>
+            <a href="#" class="group">
+                <div class="bg-white p-6 rounded-xl border-2 border-transparent group-hover:border-kfc-red transition-all text-center">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=300" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 group-hover:scale-110 transition-transform">
+                    <span class="font-oswald text-xl">ÉPILATION</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- PRODUITS POPULAIRES (Grille de prix) -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-black mb-10 uppercase italic">Les Incontournables Anyway</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Produit 1 -->
+                <div class="menu-card bg-white flex flex-col">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-kfc-red text-white font-oswald px-4 py-1 text-lg">TOP VENTE</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-black mb-2 uppercase italic">Nettoyage Profond IA</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Soin haute performance assisté par diagnostic intelligent pour une peau sans défaut.</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-3xl font-black text-kfc-red">59,00 €</span>
+                            <button class="btn-kfc uppercase text-sm px-6">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="menu-card bg-white flex flex-col">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-black mb-2 uppercase italic">Massage Flash 30'</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Besoin d'un break ? Le massage intense du dos pour les gens pressés.</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-3xl font-black text-kfc-red">35,00 €</span>
+                            <button class="btn-kfc uppercase text-sm px-6">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="menu-card bg-white flex flex-col border-kfc-red border-2 scale-105 shadow-2xl">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-black text-white font-oswald px-4 py-1 text-lg">OFFRE COMBO</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between bg-white">
+                        <div>
+                            <h3 class="text-2xl font-black mb-2 uppercase italic">Pack Anyway Full</h3>
+                            <p class="text-sm text-gray-500 mb-4">Soin visage + Massage + Manucure. Le bucket complet pour votre corps.</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-3xl font-black text-kfc-red">129,00 €</span>
+                            <button class="btn-kfc uppercase text-sm px-6">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIAGNOSTIC IA (Effet "Bornes de commande") -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12 bg-black text-white rounded-3xl overflow-hidden p-8 md:p-16">
+                <div class="flex-1">
+                    <h2 class="text-5xl md:text-7xl font-black italic uppercase leading-none mb-6">SCANNE TA PEAU <br><span class="text-kfc-red">COMMANDE TON SOIN.</span></h2>
+                    <p class="text-xl mb-8">Utilise notre borne de diagnostic IA pour trouver la recette parfaite pour ton visage.</p>
+                    <button onclick="startScan()" class="bg-white text-black font-black px-10 py-5 rounded-full text-xl uppercase hover:bg-kfc-red hover:text-white transition-all">Lancer le scan IA</button>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="relative w-64 h-96 bg-gray-900 border-8 border-gray-800 rounded-[3rem] p-4 flex flex-col items-center">
+                        <div class="w-full h-full bg-white rounded-2xl overflow-hidden flex items-center justify-center relative">
+                            <div id="scan-line" class="hidden absolute top-0 left-0 w-full h-1 bg-kfc-red shadow-[0_0_15px_red]"></div>
+                            <span class="text-kfc-red font-black text-4xl text-center">IA ANYWAY</span>
+                        </div>
+                        <div class="mt-4 w-10 h-10 bg-gray-800 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SIMPLE & BRUT -->
+    <footer class="bg-kfc-black text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+                <div>
+                    <span class="text-4xl font-black italic text-white uppercase">ANYWAY</span>
+                    <p class="text-gray-400 mt-4 text-sm font-bold">L'esthétique nouvelle génération. <br>Pas de blabla, que des résultats.</p>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-6 italic">SOINS</h4>
+                    <ul class="text-gray-400 space-y-3 text-sm font-bold uppercase">
+                        <li><a href="#" class="hover:text-kfc-red">Visage</a></li>
+                        <li><a href="#" class="hover:text-kfc-red">Massage</a></li>
+                        <li><a href="#" class="hover:text-kfc-red">Ongles</a></li>
+                        <li><a href="#" class="hover:text-kfc-red">Promos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-6 italic">INFOS</h4>
+                    <ul class="text-gray-400 space-y-3 text-sm font-bold uppercase">
+                        <li><a href="#" class="hover:text-kfc-red">Plan d'accès</a></li>
+                        <li><a href="#" class="hover:text-kfc-red">Horaires</a></li>
+                        <li><a href="#" class="hover:text-kfc-red">CGV</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-6 italic">REJOINS LE CLUB</h4>
+                    <button class="btn-kfc w-full uppercase">S'inscrire à la newsletter</button>
+                </div>
+            </div>
+            <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                <p>&copy; 2024 ANYWAY ESTHETIQUE - TOUS DROITS RÉSERVÉS</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Données personnelles</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function startScan() {
+            const line = document.getElementById('scan-line');
+            line.classList.remove('hidden');
+            let pos = 0;
+            const anim = setInterval(() => {
+                pos += 2;
+                line.style.top = (pos % 100) + '%';
+                if (pos > 200) {
+                    clearInterval(anim);
+                    line.classList.add('hidden');
+                    alert("Diagnostic IA Terminé : Votre peau a faim d'hydratation ! On vous recommande le 'Pack Anyway Full'.");
+                }
+            }, 30);
+        }
+    </script>
+
+</body>
+</html>
